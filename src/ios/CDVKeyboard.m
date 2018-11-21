@@ -196,7 +196,7 @@ static IMP WKOriginalImp;
     CGRect keyboardIntersection = CGRectIntersection(screen, keyboard);
     if (CGRectContainsRect(screen, keyboardIntersection) && !CGRectIsEmpty(keyboardIntersection) && _shrinkView && self.keyboardIsVisible) {
         // I'm sure there's a better way...
-        if (@available(iOS 12, *)) {
+        if (@available(iOS 12.1, *)) {
             self.webView.scrollView.scrollEnabled = !self.disableScrollingInShrinkView; // Order intentionally swapped.
             screen.size.height -= keyboardIntersection.size.height;
             
@@ -213,7 +213,7 @@ static IMP WKOriginalImp;
     self.webView.frame = [self.webView.superview convertRect:screen fromView:self.webView];
   //
     // I'm sure there's a better way...
-    if (@available(iOS 12, *)) {
+    if (@available(iOS 12.1, *)) {
         CGSize revisedSize = CGSizeMake(self.webView.frame.size.width, self.webView.frame.size.height - keyboard.size.height);
         self.webView.scrollView.contentSize = revisedSize;
     }
