@@ -480,7 +480,7 @@ static IMP WKOriginalImp;
             screen.size.height -= keyboardIntersection.size.height;
 
             CGSize revisedSize = CGSizeMake(self.webView.scrollView.frame.size.width, self.webView.scrollView.frame.size.height - keyboard.size.height);
-            //self.webView.scrollView.contentSize = revisedSize;
+            self.webView.scrollView.contentSize = revisedSize;
         }
         else {
             screen.size.height -= keyboardIntersection.size.height;
@@ -492,10 +492,10 @@ static IMP WKOriginalImp;
     self.webView.frame = [self.webView.superview convertRect:screen fromView:self.webView];
 
     // I'm sure there's a better way...
-    if (@available(iOS 12, *)) {
+   /* if (@available(iOS 12, *)) {
         CGSize revisedSize = CGSizeMake(self.webView.frame.size.width, self.webView.frame.size.height - keyboard.size.height);
         self.webView.scrollView.contentSize = revisedSize;
-    }
+    }*/
 }
 
 
