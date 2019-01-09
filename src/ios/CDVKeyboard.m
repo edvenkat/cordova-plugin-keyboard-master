@@ -481,7 +481,7 @@ static IMP WKOriginalImp;
 
             CGSize revisedSize = CGSizeMake(self.webView.scrollView.frame.size.width, self.webView.scrollView.frame.size.height - keyboard.size.height);
             //CGSize revisedSize = CGSizeMake(self.webView.scrollView.frame.size.width, self.webView.scrollView.frame.size.height + keyboard.size.height);
-            self.webView.scrollView.contentSize = revisedSize;
+           // self.webView.scrollView.contentSize = revisedSize;
         }
         else {
             screen.size.height -= keyboardIntersection.size.height;
@@ -496,7 +496,7 @@ static IMP WKOriginalImp;
     if (@available(iOS 12, *)) {
         CGSize revisedSize = CGSizeMake(self.webView.frame.size.width, self.webView.frame.size.height - keyboard.size.height);
         //CGSize revisedSize = CGSizeMake(self.webView.frame.size.width, self.webView.frame.size.height + keyboard.size.height);
-        self.webView.scrollView.contentSize = revisedSize;
+       // self.webView.scrollView.contentSize = revisedSize;
     }
 }
 
