@@ -477,11 +477,11 @@ static IMP WKOriginalImp;
         // I'm sure there's a better way...
         if (@available(iOS 12, *)) {
             self.webView.scrollView.scrollEnabled = !self.disableScrollingInShrinkView; // Order intentionally swapped.
-            screen.size.height -= keyboardIntersection.size.height;
+            //screen.size.height -= keyboardIntersection.size.height;
 
             CGSize revisedSize = CGSizeMake(self.webView.scrollView.frame.size.width, self.webView.scrollView.frame.size.height - keyboard.size.height);
             //CGSize revisedSize = CGSizeMake(self.webView.scrollView.frame.size.width, self.webView.scrollView.frame.size.height + keyboard.size.height);
-           // self.webView.scrollView.contentSize = revisedSize;
+            self.webView.scrollView.contentSize = revisedSize;
         }
         else {
             screen.size.height -= keyboardIntersection.size.height;
@@ -496,7 +496,7 @@ static IMP WKOriginalImp;
     if (@available(iOS 12, *)) {
         CGSize revisedSize = CGSizeMake(self.webView.frame.size.width, self.webView.frame.size.height - keyboard.size.height);
         //CGSize revisedSize = CGSizeMake(self.webView.frame.size.width, self.webView.frame.size.height + keyboard.size.height);
-       // self.webView.scrollView.contentSize = revisedSize;
+        self.webView.scrollView.contentSize = revisedSize;
     }
 }
 
