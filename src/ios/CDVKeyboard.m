@@ -273,7 +273,7 @@ NSDate *maximumDate = [calendar dateByAddingComponents:dateDelta toDate:currentD
 
 
 - (void)_pickerViewWillBeShown:(NSNotification*)aNotification {
-    [self performSelector:@selector(_resetPickerViewBackgroundAfterDelay) withObject:nil afterDelay:0];
+    [self performSelector:@selector(_resetPickerViewBackgroundAfterDelay) withObject:nil afterDelay:0.1];
 }
 
 -(void)_resetPickerViewBackgroundAfterDelay
