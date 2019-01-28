@@ -452,8 +452,8 @@ static IMP WKOriginalImp;
 
     self.webView.scrollView.scrollEnabled = YES;
 
-    //CGRect screen = [[UIScreen mainScreen] bounds];
-    CGRect screen = [[[UIApplication sharedApplication] keyWindow] frame];
+    CGRect screen = [[UIScreen mainScreen] bounds];
+    //CGRect screen = [[[UIApplication sharedApplication] keyWindow] frame];
     CGRect statusBar = [[UIApplication sharedApplication] statusBarFrame];
     CGRect keyboard = ((NSValue*)notif.userInfo[@"UIKeyboardFrameEndUserInfoKey"]).CGRectValue;
 
