@@ -140,7 +140,7 @@
                                                                  object:nil
                                                                   queue:[NSOperationQueue mainQueue]
                                                              usingBlock:^(NSNotification* notification) {
-                                                                 [weakSelf performSelector:@selector(shrinkViewKeyboardWillChangeFrame:) withObject:notification afterDelay:0.15];
+                                                                 [weakSelf performSelector:@selector(shrinkViewKeyboardWillChangeFrame:) withObject:notification afterDelay:0];
                                                                  CGRect screen = [[UIScreen mainScreen] bounds];
                                                                  //CGRect screen = [[[UIApplication sharedApplication] keyWindow] frame];
                                                                  CGRect keyboard = ((NSValue*)notification.userInfo[@"UIKeyboardFrameEndUserInfoKey"]).CGRectValue;
@@ -493,14 +493,14 @@ static IMP WKOriginalImp;
 
     // A view's frame is in its superview's coordinate system so we need to convert again
     self.webView.frame = [self.webView.superview convertRect:screen fromView:self.webView];
-    /*
+    //
     // I'm sure there's a better way...
     if (@available(iOS 12, *)) {
         CGSize revisedSize = CGSizeMake(self.webView.frame.size.width, self.webView.frame.size.height - keyboard.size.height);
         //CGSize revisedSize = CGSizeMake(self.webView.frame.size.width, self.webView.frame.size.height + keyboard.size.height);
         self.webView.scrollView.contentSize = revisedSize;
     }
-    */
+    //
 }
 
 
